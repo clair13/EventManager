@@ -9,12 +9,14 @@ def clean_zipcode(zipcode)
 end
 
 def clean_phone_number(homephone)
-  if phonenumber.to_s.length < 10
+  if homephone.to_s.length < 10
     "bad number"
-  elsif (phonenumber.to_s.length == 11) && (phonenumber.to_s[0] = "1")
-    phonenumber = phonenumber.to_s.slice(1,10)
-    phonenumber.to_i
-  elsif (phonenumber.to_s.length == 11) && (phonenumber.to_s[0] != "1")
+  elsif homephone.to_s.length == 10
+    homephone  
+  elsif (homephone.to_s.length == 11) && (homephone.to_s[0] = "1")
+    homephone = homephone.to_s.slice(1,10)
+    homephone.to_i
+  elsif (homephone.to_s.length == 11) && (homephone.to_s[0] != "1")
     "bad number"
   else
     "bad number"
